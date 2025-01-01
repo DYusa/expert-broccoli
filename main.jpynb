@@ -1,0 +1,22 @@
+st.title("Grade Calculator")
+
+vize = st.number_input("Enter Vize Grade:", min_value=0, step=1)
+final = st.number_input("Enter Final Grade:", min_value=0, step=1)
+
+o1v = st.number_input("O1 Vize Weight (%):", min_value=0, max_value=100, step=1)
+o1f = st.number_input("O1 Final Weight (%):", min_value=0, max_value=100, step=1)
+
+o2v = st.number_input("O2 Vize Weight (%):", min_value=0, max_value=100, step=1)
+o2f = st.number_input("O2 Final Weight (%):", min_value=0, max_value=100, step=1)
+
+o3v = st.number_input("O3 Vize Weight (%):", min_value=0, max_value=100, step=1)
+o3f = st.number_input("O3 Final Weight (%):", min_value=0, max_value=100, step=1)
+
+if st.button("Calculate Scores"):
+    oao1 = (o1v / 100) * vize + (o1f / 100) * final
+    oao2 = (o2v / 100) * vize + (o2f / 100) * final
+    oao3 = (o3v / 100) * vize + (o3f / 100) * final
+
+    st.write(f"OAO1: {oao1:.2f}")
+    st.write(f"OAO2: {oao2:.2f}")
+    st.write(f"OAO3: {oao3:.2f}")
